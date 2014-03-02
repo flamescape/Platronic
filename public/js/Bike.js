@@ -1,23 +1,39 @@
 
-var Bike = function(){
-    this.speed = 5;
+var Bike = function(speed){
+    this.speed = speed || 5;
     this.direction = 0; /* no direction */
 };
 
+Bike.prototype.speed = function(set){
+    if (_.isUndefined(set)) {
+        return this.speed;
+    } else {
+        this.speed = set;
+        return this;
+    }
+};
+
 Bike.prototype.tick = function(){
+    var x = this.x,
+        y = this.y;
+        
     switch (this.direction) {
         case 1:
-            this.y -= this.speed;
+            y -= this.speed;
             break;
         case 2:
-            this.x += this.speed;
+            x += this.speed;
             break;
         case 4:
-            this.y += this.speed;
+            y += this.speed;
             break;
         case 8:
-            this.x -= this.speed;
+            x -= this.speed;
             break;
+    }
+    
+    if (this.world.intersectsWall([this.x, this.y, x, y])) {
+        this.crash();
     }
 };
 
