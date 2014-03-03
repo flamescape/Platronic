@@ -1,0 +1,26 @@
+{
+  "name": "tron",
+  "version": "0.0.1",
+  "description": "tron cubed",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/flamescape/tron"
+  },
+  "keywords": [
+    "game"
+  ],
+  "dependencies" : {
+    "express"     :  "3.4.x"
+  },
+  "scripts": {
+    "jshint": "jshint server.js public/js/Bike.js public/js/main.js",
+    "test": "npm run-script jshint"
+  },
+  "devDependencies": {
+    "jshint": "2.1.x"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=0.10"
+  }
+}
