@@ -1,0 +1,18 @@
+body {
+    background: #020308;
+}
+
+.neonblue {
+    border: 3px solid rgb(173, 242, 249);
+    box-shadow: inset 2px 2px 16px 0px rgba(59, 178, 218, .9), 
+                      1px 1px 8px 4px rgba(59, 178, 218, .5);
+    border-radius: 10px;
+    border-bottom-right-radius: 64px;
+    border-top-left-radius: 64px;
+    background: rgba(0, 88, 120, .35);
+}
+
+.neonbluetext {
+    color: rgb(173, 242, 249);
+}
+
