@@ -1,10 +1,9 @@
-
-var Bike = function(speed){
+var Bike = function(speed) {
     this.speed = speed || 5;
     this.direction = 0; /* no direction */
 };
 
-Bike.prototype.speed = function(set){
+Bike.prototype.speed = function(set) {
     if (_.isUndefined(set)) {
         return this.speed;
     } else {
@@ -13,7 +12,7 @@ Bike.prototype.speed = function(set){
     }
 };
 
-Bike.prototype.tick = function(){
+Bike.prototype.tick = function() {
     var x = this.x,
         y = this.y;
         
