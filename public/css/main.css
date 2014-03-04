@@ -12,14 +12,16 @@
 body {
     background: #020308;
     background: url('../img/tronic.svg');
-    -webkit-animation-duration: 300s;
+    -webkit-animation-duration: 240s;
     -webkit-animation-name: glide;
     -webkit-animation-iteration-count: infinite;
     -webkit-animation-timing-function: linear;
-    animation-duration: 300s;
+    animation-duration: 4s;
     animation-name: glide;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
 }
 
 @-webkit-keyframes glide{
