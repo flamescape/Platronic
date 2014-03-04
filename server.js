@@ -13,7 +13,8 @@ app.get('/client.js', function(req, res){
             console.log('Error bundling client JS', err);
             return res.send(500, err);
         }
-        res.send(bundle);
+        res.set('Content-Type', 'text/javascript');
+        res.send(200, bundle);
     });
 });
 
