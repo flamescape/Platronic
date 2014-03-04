@@ -9,8 +9,9 @@
   "keywords": [
     "game"
   ],
-  "dependencies" : {
-    "express"     :  "3.4.x"
+  "dependencies": {
+    "express": "3.4.x",
+    "browserify": "~3.32.0"
   },
   "scripts": {
     "jshint": "jshint server.js public/js/Bike.js public/js/main.js",
