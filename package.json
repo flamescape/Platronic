@@ -14,7 +14,7 @@
     "browserify": "~3.32.0"
   },
   "scripts": {
-    "jshint": "jshint server.js public/js/Bike.js public/js/main.js",
+    "jshint": "jshint server.js client.js js/Bike.js",
     "test": "npm run-script jshint"
   },
   "devDependencies": {
