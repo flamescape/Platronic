@@ -5,6 +5,7 @@ var canvas = document.getElementById("renderCanvas");
 // Load BABYLON 3D engine
 var engine = new BABYLON.Engine(canvas, true);
 var scene = new BABYLON.Scene(engine);
+scene.clearColor = new BABYLON.Color4(0,0,0,0)
 
 // Creating a camera looking to the zero point (0,0,0), a light, and a sphere of size 1
 var camera = new BABYLON.ArcRotateCamera("Camera", 1, 0.8, 10, new BABYLON.Vector3(0, 0, 0), scene);
