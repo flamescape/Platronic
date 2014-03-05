@@ -5,6 +5,13 @@ var Bike = function() {
     this._direction = 0; /* no direction */
 };
 
+Bike.prototype.update = function(){
+    /* component pattern anyone? */
+    this.input.update(this.physics);
+    this.physics.update(this);
+    this.graphics.update(this, this.physics);
+};
+
 Bike.prototype.speed = function(set) {
     if (_.isUndefined(set)) {
         return this._speed;
