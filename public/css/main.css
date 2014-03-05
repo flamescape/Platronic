@@ -10,8 +10,7 @@
 }
 
 body {
-    background: #020308;
-    background: url('../img/tronic.svg');
+    background: url('../img/tronic.svg') #020308;
     background-position: center center;
     animation-duration: 240s;
     animation-name: glide;
