@@ -1,13 +1,24 @@
-var Bike = function(speed) {
-    this.speed = speed || 5;
-    this.direction = 0; /* no direction */
+var _ = require('underscore');
+
+var Bike = function() {
+    this._speed = 5;
+    this._direction = 0; /* no direction */
 };
 
 Bike.prototype.speed = function(set) {
     if (_.isUndefined(set)) {
-        return this.speed;
+        return this._speed;
     } else {
-        this.speed = set;
+        this._speed = set;
+        return this;
+    }
+};
+
+Bike.prototype.direction = function(set) {
+    if (_.isUndefined(set)) {
+        return this._direction;
+    } else {
+        this._direction = set;
         return this;
     }
 };
@@ -18,21 +29,23 @@ Bike.prototype.tick = function() {
         
     switch (this.direction) {
         case 1:
-            y -= this.speed;
+            y -= this._speed;
             break;
         case 2:
-            x += this.speed;
+            x += this._speed;
             break;
         case 4:
-            y += this.speed;
+            y += this._speed;
             break;
         case 8:
-            x -= this.speed;
+            x -= this._speed;
             break;
     }
-    
+    /*
     if (this.world.intersectsWall([this.x, this.y, x, y])) {
         this.crash();
     }
+    */
 };
 
+module.exports = Bike;

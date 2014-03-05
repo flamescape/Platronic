@@ -11,7 +11,8 @@
   ],
   "dependencies": {
     "express": "3.4.x",
-    "browserify": "~3.32.0"
+    "browserify": "~3.32.0",
+    "underscore": "~1.6.0"
   },
   "scripts": {
     "jshint": "jshint server.js client.js js/Bike.js",
