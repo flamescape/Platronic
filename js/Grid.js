@@ -1,7 +1,7 @@
 var GridGraphicsComponent = require('./GridGraphicsComponent');
 
-var Grid = function(){
-    this.graphicsComponent = new GridGraphicsComponent();
+var Grid = function(params){
+    this.graphicsComponent = new GridGraphicsComponent(params);
 };
 
 Grid.prototype.update = function(){

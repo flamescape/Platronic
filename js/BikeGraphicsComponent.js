@@ -1,4 +1,4 @@
-var BABYLON = require('babylon');
+var BABYLON = require('./lib/babylon');
 
 var BikeGraphicsComponent = function(colour, name){
     this.colour = colour;
