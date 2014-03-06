@@ -5,7 +5,7 @@ var engine = new BABYLON.Engine(canvas, true);
 var scene = new BABYLON.Scene(engine);
 scene.clearColor = new BABYLON.Color4(0,0,0,0);
 
-var light0 = new BABYLON.PointLight("Omni0", new BABYLON.Vector3(0, 0, 0), scene);
+var light0 = new BABYLON.PointLight("Omni0", new BABYLON.Vector3(0, 0, 50), scene);
 light0.diffuse = new BABYLON.Color3(0.67, 0.95, 0.98);
 light0.specular = new BABYLON.Color3(0.67, 0.95, 0.98);
 
@@ -33,6 +33,7 @@ p6.rotation = new BABYLON.Vector3(3 * Math.PI / 2, 0, 0);
 
 var materialGrid = new BABYLON.StandardMaterial("grid", scene);
 materialGrid.diffuseTexture = new BABYLON.Texture("img/grid.svg", scene);
+materialGrid.emissiveTexture = new BABYLON.Texture("img/grid_emiss.svg", scene);
 materialGrid.diffuseTexture.hasAlpha = false;
 materialGrid.backFaceCulling = true;
 
