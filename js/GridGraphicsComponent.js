@@ -17,6 +17,8 @@ var GridGraphicsComponent = function(params){
     this.material.specularTexture = new BABYLON.Texture("img/grid_spec.svg", ServiceLocator.get('scene'));
     this.material.diffuseTexture.hasAlpha = false;
     this.material.backFaceCulling = true;
+    var bumpMaterial = new BABYLON.StandardMaterial("texture1", ServiceLocator.get('scene'));
+    this.material.bumpTexture = new BABYLON.Texture("img/normalMap.jpg", ServiceLocator.get('scene'));
     
     // glue it all together
     this.plane.position = this.position;
