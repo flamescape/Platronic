@@ -1,5 +1,6 @@
 var BABYLON = require('./lib/babylon')
   , Grid = require('./js/Grid')
+  , Bike = require('./js/Bike')
   , ServiceLocator = require('./js/ServiceLocator')
   , PlatonicConstructor = require('./js/PlatonicConstructor')
   ;
@@ -18,6 +19,11 @@ var camera = new BABYLON.ArcRotateCamera("Camera", 0, 0, 120, new BABYLON.Vector
 light0.parent = camera;
 
 var cube = PlatonicConstructor(64);
+var b = new Bike();
+b.x = (Math.random() * 64)-32;
+b.y = (Math.random() * 64)-32;
+cube[0].addBike(b, 32, 32);
+b.update();
 
 // Attach the camera to the scene
 scene.activeCamera.attachControl(canvas);
