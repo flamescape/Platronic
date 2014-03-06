@@ -11,7 +11,7 @@ var GridGraphicsComponent = function(params){
     BABYLON.Vector3.apply(this.rotation, params.rotation);
     
     this.material = new BABYLON.StandardMaterial("grid", ServiceLocator.get('scene'));
-    this.material.diffuseTexture = new BABYLON.Texture("img/grid.svg", ServiceLocator.get('scene'));
+    this.material.diffuseTexture = new BABYLON.Texture("img/grid_emiss.svg", ServiceLocator.get('scene'));
     this.material.diffuseTexture.hasAlpha = false;
     this.material.backFaceCulling = true;
     
