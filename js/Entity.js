@@ -15,9 +15,15 @@ Entity.prototype.init = function(inputComponent, physicsComponent, graphicsCompo
 };
 
 Entity.prototype.update = function(){
-    this.inputComponent.update(this.physicsComponent);
-    this.physicsComponent.update(this);
-    this.graphicsComponent.update(this, this.physicsComponent);
+    if (this.inputComponent) {
+        this.inputComponent.update(this.physicsComponent);
+    }
+    if (this.physicsComponent) {
+        this.physicsComponent.update(this);
+    }
+    if (this.graphicsComponent) {
+        this.graphicsComponent.update(this, this.physicsComponent);
+    }
 };
 
 module.exports = Entity;
