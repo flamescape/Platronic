@@ -2,9 +2,10 @@ var express = require('express')
   , app = express()
   , browserify = require('browserify')
   , program = require('commander')
-;
+  ;
 
 program.option('-p, --port <n>', 'The port number', parseInt).parse(process.argv);
+program.port = program.port || 80;
 
 app.use(express.static('public'));
 
@@ -20,7 +21,6 @@ app.get('/client.js', function (req, res) {
         res.send(200, bundle);
     });
 });
-if (typeof program.port == 'undefined')
-    program.port = 80;
+
 app.listen(program.port);
 console.log('Now listening on port: ' + program.port);
