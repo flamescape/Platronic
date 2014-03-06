@@ -1,45 +1,47 @@
 var BABYLON = require('./lib/babylon');
 
-// Get the Canvas element from our HTML below
 var canvas = document.getElementById("renderCanvas");
-// Load BABYLON 3D engine
 var engine = new BABYLON.Engine(canvas, true);
 var scene = new BABYLON.Scene(engine);
 scene.clearColor = new BABYLON.Color4(0,0,0,0);
 
-// Creating a camera looking to the zero point (0,0,0), a light, and a sphere of size 1
-//var light1 = new BABYLON.PointLight("Omni", new BABYLON.Vector3(0, 0, 0), scene);
-
-//var light0 = new BABYLON.HemisphericLight("Hemi0", new BABYLON.Vector3(0, 1, 0), scene);
-//light0.diffuse = new BABYLON.Color3(1, 1, 1);
-//light0.specular = new BABYLON.Color3(1, 1, 1);
-//light0.groundColor = new BABYLON.Color3(0, 0, 0);
-
-/*
-var light1 = new BABYLON.HemisphericLight("Hemi0", new BABYLON.Vector3(0, -1, 0), scene);
-light1.diffuse = new BABYLON.Color3(.1, 1, 1);
-light1.specular = new BABYLON.Color3(1, .1, 1);
-light1.groundColor = new BABYLON.Color3(0, 0, 1);
-*/
-
 var light0 = new BABYLON.PointLight("Omni0", new BABYLON.Vector3(0, 0, 0), scene);
-light0.diffuse = new BABYLON.Color3(.67, .95, .98);
-light0.specular = new BABYLON.Color3(.67, .95, 98);
+light0.diffuse = new BABYLON.Color3(0.67, 0.95, 0.98);
+light0.specular = new BABYLON.Color3(0.67, 0.95, 0.98);
 
-var camera = new BABYLON.ArcRotateCamera("Camera", 0, 0, 5, new BABYLON.Vector3(0, 0, 0), scene);
+var camera = new BABYLON.ArcRotateCamera("Camera", 0, 0, 120, new BABYLON.Vector3(0, 0, 0), scene);
 light0.parent = camera;
 var p1 = BABYLON.Mesh.CreatePlane("p1", 64, scene, false);
 var p2 = BABYLON.Mesh.CreatePlane("p2", 64, scene, false);
 var p3 = BABYLON.Mesh.CreatePlane("p3", 64, scene, false);
 var p4 = BABYLON.Mesh.CreatePlane("p4", 64, scene, false);
+var p5 = BABYLON.Mesh.CreatePlane("p5", 64, scene, false);
+var p6 = BABYLON.Mesh.CreatePlane("p5", 64, scene, false);
 
 p1.position = new BABYLON.Vector3(0, 0, 32);
 p2.position = new BABYLON.Vector3(0, 0, -32);
 p3.position = new BABYLON.Vector3(32, 0, 0);
 p4.position = new BABYLON.Vector3(-32, 0, 0);
+p5.position = new BABYLON.Vector3(0, 32, 0);
+p6.position = new BABYLON.Vector3(0, -32, 0);
+
 p1.rotation = new BABYLON.Vector3(Math.PI, 0, 0);
 p3.rotation = new BABYLON.Vector3(Math.PI, Math.PI/2, 0);
 p4.rotation = new BABYLON.Vector3(0, Math.PI/2, 0);
+p5.rotation = new BABYLON.Vector3(Math.PI/2, 0, 0);
+p6.rotation = new BABYLON.Vector3(3 * Math.PI / 2, 0, 0);
+
+var materialGrid = new BABYLON.StandardMaterial("grid", scene);
+materialGrid.diffuseTexture = new BABYLON.Texture("img/grid.svg", scene);
+materialGrid.diffuseTexture.hasAlpha = false;
+materialGrid.backFaceCulling = true;
+
+p1.material = materialGrid;
+p2.material = materialGrid;
+p3.material = materialGrid;
+p4.material = materialGrid;
+p5.material = materialGrid;
+p6.material = materialGrid;
 
 // Attach the camera to the scene
 scene.activeCamera.attachControl(canvas);
