@@ -1,22 +1,20 @@
 {
-  "name": "tron",
+  "name": "Platronic",
   "version": "0.0.1",
-  "description": "tron cubed",
+  "description": "Lightcycles on platonic solid(s)",
   "repository": {
     "type": "git",
-    "url": "https://github.com/flamescape/tron"
+    "url": "https://github.com/flamescape/Platronic"
   },
   "keywords": [
     "game"
   ],
   "dependencies": {
     "express": "3.4.x",
-    "browserify": "~3.32.0",
-    "underscore": "~1.6.0",
-    "commander": "~2.1.0"
+    "browserify": "~3.32.0"
   },
   "scripts": {
-    "jshint": "jshint server.js client.js js/Bike.js",
+    "jshint": "jshint package.json server.js client.js js/Bike.js",
     "test": "npm run-script jshint"
   },
   "devDependencies": {
