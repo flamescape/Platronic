@@ -13,6 +13,8 @@ var GridGraphicsComponent = function(params){
     this.material = new BABYLON.StandardMaterial("grid", ServiceLocator.get('scene'));
     this.material.diffuseTexture = new BABYLON.Texture("img/grid.svg", ServiceLocator.get('scene'));
     this.material.emissiveTexture = new BABYLON.Texture("img/grid_emiss.svg", ServiceLocator.get('scene'));
+    this.material.specularPower = 10;
+    this.material.specularTexture = new BABYLON.Texture("img/grid_spec.svg", ServiceLocator.get('scene'));
     this.material.diffuseTexture.hasAlpha = false;
     this.material.backFaceCulling = true;
     
