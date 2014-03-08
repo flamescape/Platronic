@@ -12,8 +12,9 @@ scene.clearColor = new BABYLON.Color4(0,0,0,0);
 ServiceLocator.provide('scene', scene);
 
 var light0 = new BABYLON.PointLight("Omni0", new BABYLON.Vector3(0, 0, 50), scene);
-light0.diffuse = new BABYLON.Color3(0.67, 0.95, 0.98);
-light0.specular = new BABYLON.Color3(0.67, 0.95, 0.98);
+light0.diffuse = new BABYLON.Color3(0.67, 0.67, 0.78);
+light0.specular = new BABYLON.Color3(0.67, 0.67, 0.78);
+light0.intensity = .5;
 
 var camera = new BABYLON.ArcRotateCamera("Camera", 0, 0, 120, new BABYLON.Vector3(0, 0, 0), scene);
 light0.parent = camera;
