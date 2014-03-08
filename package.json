@@ -16,8 +16,20 @@
     "commander": "~2.1.0"
   },
   "scripts": {
-    "jshint": "jshint package.json server.js client.js js/Bike.js",
+    "jshint": "jshint package.json server.js client.js js/Bike.js js/BikeGraphicsComponent.js js/BikeKeyboardInputComponent.js js/BikeNetInputComponent.js js/BikePhysicsComponent.js js/Entity.js js/Grid.js js/GridGraphicsComponent.js js/PlatonicConstructor.js js/ServiceLocator.js",
     "test": "npm run-script jshint"
+  },
+  "jshintConfig": {
+    "node": true,
+    "curly": true,
+    "quotmark": true,
+    "trailing": true,
+    "eqeqeq": true,
+    "laxcomma": true,
+    "unused": true,
+    "undef": true,
+    "browser": true,
+    "indent": 4
   },
   "devDependencies": {
     "jshint": "2.1.x"
