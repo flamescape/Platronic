@@ -2,15 +2,12 @@
     point.X += Math.cos(point.angle) * speed;
     point.Y += Math.sin(point.angle) * speed;
     return point;
-}
+};
 
-function CCW(p1, p2, p3) {
-    a = p1.X; b = p1.Y;
-    c = p2.X; d = p2.Y;
-    e = p3.X; f = p3.Y;
-    return (f - b) * (c - a) > (d - b) * (e - a);
-}
+var CCW = function (p1, p2, p3) {
+    return (p3.Y - p1.Y) * (p2.X - p1.X) > (p2.Y - p1.Y) * (p3.X - p1.X);
+};
 
-function isIntersect(p1, p2, p3, p4) {
-    return (CCW(p1, p3, p4) != CCW(p2, p3, p4)) && (CCW(p1, p2, p3) != CCW(p1, p2, p4));
-}
+var isIntersect = function (p1, p2, p3, p4) {
+    return (CCW(p1, p3, p4) !== CCW(p2, p3, p4)) && (CCW(p1, p2, p3) !== CCW(p1, p2, p4));
+};
