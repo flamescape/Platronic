@@ -16,8 +16,8 @@
     "commander": "~2.1.0"
   },
   "scripts": {
-    "jshint": "jshint package.json server.js client.js js/Bike.js js/BikeGraphicsComponent.js js/BikeKeyboardInputComponent.js js/BikeNetInputComponent.js js/BikePhysicsComponent.js js/Entity.js js/Grid.js js/GridGraphicsComponent.js js/PlatonicConstructor.js js/ServiceLocator.js",
-    "test": "npm run-script jshint"
+    "pretest": "jshint js client.js server.js",
+    "test": "mocha"
   },
   "jshintConfig": {
     "node": true,
