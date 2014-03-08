@@ -1,5 +1,4 @@
-var _ = require('underscore')
-  , Entity = require('./Entity')
+var Entity = require('./Entity')
   , BikeGraphicsComponent = require('./BikeGraphicsComponent')
   ;
 

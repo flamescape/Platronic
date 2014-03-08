@@ -1,5 +1,4 @@
 var BABYLON = require('./lib/babylon')
-  , Grid = require('./js/Grid')
   , Bike = require('./js/Bike')
   , ServiceLocator = require('./js/ServiceLocator')
   , PlatonicConstructor = require('./js/PlatonicConstructor')
