@@ -12,6 +12,8 @@ BikePhysicsComponent.prototype.tick = function(bike){
     // this is where the movement magic happens!
     bike.x += this.speed * Math.cos(this.angle);
     bike.y += this.speed * Math.sin(this.angle);
+    
+    this.angle += Math.PI / 200;
 };
 
 module.exports = BikePhysicsComponent;
