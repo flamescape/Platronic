@@ -15,7 +15,7 @@ PhysicsComponent.prototype.update = function(){
     this._lastUpdate = now;
     while (this._acc > this.fps) {
         this._acc -= this.fps;
-        this.tick();
+        this.tick.apply(this, arguments);
     }
 };
 

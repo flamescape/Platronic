@@ -22,8 +22,7 @@ var cube = PlatonicConstructor(64);
 var b = new Bike();
 b.x = (Math.random() * 64)-32;
 b.y = (Math.random() * 64)-32;
-cube[0].addBike(b, 32, 32);
-b.update();
+cube[0].addBike(b);
 
 // Attach the camera to the scene
 scene.activeCamera.attachControl(canvas);
@@ -31,6 +30,7 @@ scene.activeCamera.attachControl(canvas);
 // Once the scene is loaded, just register a render loop to render it
 engine.runRenderLoop(function () {
     scene.render();
+    b.update();
 });
 
 window.addEventListener('resize', function() {
