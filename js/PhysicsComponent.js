@@ -7,7 +7,6 @@ PhysicsComponent.prototype.fps = 1000 / 60 << 0;
 
 PhysicsComponent.prototype.tick = function(){
     // implemented by sub-prototypes
-    console.log('tick');
 };
 
 PhysicsComponent.prototype.update = function(){
