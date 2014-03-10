@@ -19,7 +19,7 @@ Entity.prototype.update = function(){
         this.inputComponent.update(this.physicsComponent);
     }
     if (this.physicsComponent) {
-        this.physicsComponent.update(this);
+        this.physicsComponent.update(this, this.inputComponent);
     }
     if (this.graphicsComponent) {
         this.graphicsComponent.update(this, this.physicsComponent);

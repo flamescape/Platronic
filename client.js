@@ -2,6 +2,7 @@ var BABYLON = require('./lib/babylon')
   , Bike = require('./js/Bike')
   , ServiceLocator = require('./js/ServiceLocator')
   , PlatonicConstructor = require('./js/PlatonicConstructor')
+  , BikeKeyboardInputComponent = require('./js/BikeKeyboardInputComponent')
   ;
 
 var canvas = document.getElementById('renderCanvas');
@@ -19,10 +20,13 @@ var camera = new BABYLON.ArcRotateCamera('Camera', 0, 0, 120, new BABYLON.Vector
 light0.parent = camera;
 
 var cube = PlatonicConstructor(64);
+
 var b = new Bike();
 b.x = (Math.random() * 64)-32;
 b.y = (Math.random() * 64)-32;
 cube[0].addBike(b);
+
+b.inputComponent = new BikeKeyboardInputComponent();
 
 // Attach the camera to the scene
 scene.activeCamera.attachControl(canvas);
