@@ -18,6 +18,7 @@ light0.intensity = 0.5;
 
 var camera = new BABYLON.ArcRotateCamera('Camera', 0, 0, 120, new BABYLON.Vector3(0, 0, 0), scene);
 light0.parent = camera;
+camera.alpha = Math.PI;
 
 var cube = PlatonicConstructor(64);
 
