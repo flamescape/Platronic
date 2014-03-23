@@ -11,7 +11,7 @@ var Bike = function() {
     this.graphicsComponent = new BikeGraphicsComponent();
     this.physicsComponent = new BikePhysicsComponent();
     
-    this.wall = new Wall();
+    this.wall = new Wall(this);
 };
 Bike.prototype = Object.create(Entity.prototype);
 
@@ -19,6 +19,14 @@ Bike.prototype.update = function() {
     Entity.prototype.update.apply(this, arguments);
     
     this.wall.update(this.x, this.y);
+};
+
+Bike.prototype.isTurning = function(){
+    if (!this.inputComponent) {
+        return;
+    }
+    
+    return this.inputComponent.turningLeft || this.inputComponent.turningRight;
 };
 
 module.exports = Bike;
