@@ -15,13 +15,17 @@ Wall.prototype.update = function(x, y) {
     var distance = Math.sqrt(Math.pow(x - this.lastX, 2) + Math.pow(y - this.lastY, 2));
     
     if (distance > 3) {
-        this.segments.push({
-            x: x,
-            y: y
-        });
+        this.newSegment(x, y);
         this.lastX = x;
         this.lastY = y;
     }
+};
+
+Wall.prototype.newSegment = function(x, y) {
+    this.segments.push({
+        x: x,
+        y: y
+    });
 };
 
 module.exports = Wall;
