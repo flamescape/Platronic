@@ -79,6 +79,7 @@ Wall.prototype.renderNewSegment = function() {
     left.material = new BABYLON.StandardMaterial('path', ServiceLocator.get('scene'));
     left.material.opacityTexture = new BABYLON.Texture('img/path_opac.png', ServiceLocator.get('scene'));
     left.material.emissiveColor = new BABYLON.Color3(0, 1, 0);
+    left.material.backFaceCulling = false;
 };
 
 Wall.prototype.bufferNewSegment = function() {
@@ -145,7 +146,7 @@ Wall.prototype.bufferNewSegment = function() {
         };
         
         if (isNaN(this.segments[1].left.x) || isNaN(this.segments[1].left.y) || isNaN(this.segments[0].left.x) || isNaN(this.segments[0].left.y)) {
-            console.log(this.segments[0], this.segments[1]);
+            //console.log(this.segments[0], this.segments[1]);
         }
     }
 };
