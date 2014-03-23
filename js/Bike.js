@@ -18,7 +18,7 @@ Bike.prototype = Object.create(Entity.prototype);
 Bike.prototype.update = function() {
     Entity.prototype.update.apply(this, arguments);
     
-    
+    this.wall.update(this.x, this.y);
 };
 
 module.exports = Bike;
